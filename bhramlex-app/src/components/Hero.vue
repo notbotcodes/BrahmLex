@@ -48,13 +48,13 @@ onMounted(() => {
     <div class="hero__copy">
       <div ref="intro" class="eyebrow">
         <span class="eyebrow__line"></span>
-        <span class="eyebrow__label">Advocate &amp; Legal Counsel</span>
+        <span class="eyebrow__label">Advocate &amp; Legal Counsel, Bhopal</span>
       </div>
       <h1 ref="headline" class="hero__title">Considered counsel for matters that matter.</h1>
       <p class="hero__lede">
-        Bhramlex is the practice of <strong>Abhishek Tiwari</strong> — advising individuals and
-        businesses across litigation, corporate, and dispute resolution with clarity, discretion,
-        and rigour.
+        Bhramlex is the practice of <strong>Abhishek Tiwari</strong>, an advocate in Bhopal
+        advising individuals and businesses across litigation, corporate, and dispute resolution
+        with clarity, discretion, and rigour.
       </p>
       <div class="hero__actions">
         <a href="#contact" class="btn btn--primary">Request a consultation</a>

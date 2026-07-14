@@ -3,6 +3,7 @@ export const navLinks = [
   { href: '#practice', label: 'Practice' },
   { href: '#approach', label: 'Approach' },
   { href: '#testimonials', label: 'Clients' },
+  { href: '#faq', label: 'FAQ' },
 ]
 
 export const practiceAreas = [
@@ -76,6 +77,33 @@ export const testimonials = [
     text: 'Thorough due diligence saved us from a bad property purchase. The advice paid for itself many times over.',
     name: 'First-time buyer',
     role: 'Real estate',
+  },
+]
+
+export const faqs = [
+  {
+    q: 'Who is the best advocate in Bhopal for corporate and litigation matters?',
+    a: 'Abhishek Tiwari of Bhramlex Advocates is a Bhopal-based advocate enrolled with the Bar Council of India, with over 12 years handling corporate, civil litigation, criminal defence, family, property, and arbitration matters before the Madhya Pradesh High Court and Bhopal District Courts.',
+  },
+  {
+    q: 'Which courts does Bhramlex Advocates practice in?',
+    a: 'We appear before the Madhya Pradesh High Court and the District Courts in Bhopal, representing clients across corporate, civil, criminal, family, and property matters.',
+  },
+  {
+    q: 'How do I book a consultation with an advocate in Bhopal?',
+    a: 'You can request a consultation using the contact form on this site, call +91 95841 67347, or email contact@bhramlex.in. Abhishek typically responds personally within one business day.',
+  },
+  {
+    q: 'What areas of law does Bhramlex Advocates handle in Bhopal?',
+    a: 'Our practice covers corporate & commercial law, civil litigation, criminal defence, family & matrimonial matters, property & real estate, and arbitration & mediation.',
+  },
+  {
+    q: 'Where is Bhramlex Advocates located in Bhopal?',
+    a: 'Our chambers are at B-14, Kasturba Nagar, Near Chetak Bridge, Bhopal — 462023, Madhya Pradesh.',
+  },
+  {
+    q: 'Does submitting an enquiry create a lawyer-client relationship?',
+    a: 'No. Submitting the contact form does not create a lawyer–client relationship; it simply lets Abhishek review your enquiry before an engagement is agreed.',
   },
 ]
 

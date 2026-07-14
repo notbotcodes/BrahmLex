@@ -13,7 +13,7 @@ const facts = [
   { label: 'Education', value: 'LL.B. & LL.M.<br>Corporate & Litigation focus' },
   { label: 'Languages', value: 'English · Hindi' },
   { label: 'Enrolment', value: 'Bar Council of India' },
-  { label: 'Appears before', value: 'High Court & District Courts' },
+  { label: 'Appears before', value: 'Madhya Pradesh High Court<br>&amp; Bhopal District Courts' },
 ]
 </script>
 
@@ -28,14 +28,14 @@ const facts = [
     </div>
     <div>
       <p class="about__p about__p--lead">
-        Abhishek Tiwari founded Bhramlex to offer clients something increasingly rare in legal
-        practice: undivided attention. Every matter is handled personally, from the first
+        Abhishek Tiwari founded Bhramlex in Bhopal to offer clients something increasingly rare in
+        legal practice: undivided attention. Every matter is handled personally, from the first
         consultation to the final resolution.
       </p>
       <p class="about__p">
-        With over a decade advising individuals, families, and businesses, his approach pairs
-        sharp courtroom advocacy with a preference for pragmatic, cost-effective outcomes. Clients
-        come for the counsel and stay for the candour.
+        With over a decade advising individuals, families, and businesses across Bhopal and the
+        surrounding region, his approach pairs sharp courtroom advocacy with a preference for
+        pragmatic, cost-effective outcomes. Clients come for the counsel and stay for the candour.
       </p>
       <div ref="grid" class="facts">
         <div v-for="fact in facts" :key="fact.label" class="fact">

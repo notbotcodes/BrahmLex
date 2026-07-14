@@ -11,7 +11,7 @@ function closeMenu() {
 
 let observer
 onMounted(() => {
-  const sections = ['about', 'practice', 'approach', 'testimonials', 'contact']
+  const sections = ['about', 'practice', 'approach', 'testimonials', 'faq', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean)
 

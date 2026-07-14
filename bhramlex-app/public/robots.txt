@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brahm-lex.vercel.app/sitemap.xml

@@ -12,7 +12,7 @@ const year = 2026
             <span class="footer__brand-tag">Advocates</span>
           </div>
           <p class="footer__desc">
-            The practice of Advocate Abhishek Tiwari. Considered legal counsel, delivered
+            The Bhopal practice of Advocate Abhishek Tiwari. Considered legal counsel, delivered
             personally.
           </p>
         </div>
@@ -24,6 +24,7 @@ const year = 2026
               <a href="#about">About</a>
               <a href="#practice">Practice areas</a>
               <a href="#approach">Approach</a>
+              <a href="#faq">FAQ</a>
               <a href="#contact">Contact</a>
             </div>
           </div>
@@ -34,12 +35,18 @@ const year = 2026
               <a href="tel:+919584167347">+91 95841 67347</a>
             </div>
           </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Chambers</div>
+            <p class="footer__address">
+              B-14, Kasturba Nagar,<br />Near Chetak Bridge,<br />Bhopal — 462023, Madhya Pradesh
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="footer__bottom">
         <span>© {{ year }} Bhramlex Advocates. All rights reserved.</span>
-        <span>Advocate Abhishek Tiwari · Enrolled with the Bar Council of India</span>
+        <span>Advocate Abhishek Tiwari, Bhopal · Enrolled with the Bar Council of India</span>
       </div>
     </div>
   </footer>
@@ -125,6 +132,12 @@ const year = 2026
 
 .footer__col-links a:hover {
   color: var(--cream);
+}
+
+.footer__address {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--footer-text-soft);
 }
 
 .footer__bottom {
