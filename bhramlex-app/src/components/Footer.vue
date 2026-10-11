@@ -7,13 +7,14 @@ const year = 2026
     <div class="footer__inner">
       <div class="footer__top">
         <div>
-          <div class="footer__brand">
-            <span class="footer__brand-name">Bhramlex</span>
-            <span class="footer__brand-tag">Advocates</span>
-          </div>
+          <a href="#top" class="footer__brand" aria-label="BrahmLex — back to top">
+            <span class="footer__logo-crop">
+              <img src="/brahmlex-logo.png" alt="BrahmLex" class="footer__logo" />
+            </span>
+          </a>
           <p class="footer__desc">
-            The Bhopal practice of Advocate Abhishek Tiwari. Considered legal counsel, delivered
-            personally.
+            Independent legal counsel across Bhopal, Jabalpur, Raisen, Berasia, and Sehore—before
+            courts, tribunals, and arbitral forums.
           </p>
         </div>
 
@@ -31,7 +32,7 @@ const year = 2026
           <div class="footer__col">
             <div class="footer__col-title">Reach us</div>
             <div class="footer__col-links">
-              <a href="mailto:contact@bhramlex.in">contact@bhramlex.in</a>
+              <a href="mailto:contact@Brahmlex.in">contact@Brahmlex.in</a>
               <a href="tel:+919584167347">+91 95841 67347</a>
             </div>
           </div>
@@ -40,12 +41,15 @@ const year = 2026
             <p class="footer__address">
               B-14, Kasturba Nagar,<br />Near Chetak Bridge,<br />Bhopal — 462023, Madhya Pradesh
             </p>
+             <p class="footer__address">
+              357-358 Lawyers' chambers,behind district and session court Arera hills
+            </p>
           </div>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <span>© {{ year }} Bhramlex Advocates. All rights reserved.</span>
+        <span>© {{ year }} Brahmlex Advocates. All rights reserved.</span>
         <span>Advocate Abhishek Tiwari, Bhopal · Enrolled with the Bar Council of India</span>
       </div>
     </div>
@@ -54,7 +58,9 @@ const year = 2026
 
 <style scoped>
 .footer {
-  background: var(--footer-bg);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(189, 114, 40, 0.13), transparent 24rem),
+    var(--footer-bg);
   color: var(--footer-text);
   border-top: 1px solid var(--footer-border);
 }
@@ -62,7 +68,7 @@ const year = 2026
 .footer__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 56px 32px 40px;
+  padding: 72px 32px 40px;
 }
 
 .footer__top {
@@ -76,25 +82,26 @@ const year = 2026
 }
 
 .footer__brand {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
+  display: inline-block;
   margin-bottom: 14px;
 }
 
-.footer__brand-name {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 28px;
-  color: var(--cream);
+.footer__logo-crop {
+  position: relative;
+  display: block;
+  width: 246px;
+  height: 100px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 2px;
 }
 
-.footer__brand-tag {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
+.footer__logo {
+  position: absolute;
+  width: 350px;
+  max-width: none;
+  left: -54px;
+  top: -72px;
 }
 
 .footer__desc {

@@ -19,7 +19,7 @@ useScrollReveal(grid, '.quote')
         <span class="eyebrow__label">In Their Words</span>
       </div>
       <h2 ref="heading" class="testimonials__heading">
-        What clients say about working with Bhramlex.
+        What clients say about working with Brahmlex.
       </h2>
       <div ref="grid" class="testimonials__grid">
         <div v-for="q in testimonials" :key="q.name" class="quote">
@@ -35,14 +35,17 @@ useScrollReveal(grid, '.quote')
 
 <style scoped>
 .testimonials {
-  background: var(--ink);
-  color: #e8ebe6;
+  position: relative;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(189, 114, 40, 0.18), transparent 28rem),
+    linear-gradient(145deg, var(--ink), var(--footer-bg));
+  color: #f4f7fb;
 }
 
 .testimonials__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 120px 32px;
 }
 
 .testimonials__heading {
@@ -62,8 +65,11 @@ useScrollReveal(grid, '.quote')
 }
 
 .quote {
-  border-top: 1px solid #35473e;
-  padding-top: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(4px);
 }
 
 .quote__mark {
@@ -77,7 +83,7 @@ useScrollReveal(grid, '.quote')
 .quote__text {
   font-size: 16px;
   line-height: 1.7;
-  color: #d6dbd4;
+  color: var(--footer-text-soft);
   margin-bottom: 24px;
 }
 
@@ -91,7 +97,7 @@ useScrollReveal(grid, '.quote')
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #8fa093;
+  color: var(--footer-text);
   margin-top: 3px;
 }
 

@@ -48,37 +48,42 @@ onMounted(() => {
     <div class="hero__copy">
       <div ref="intro" class="eyebrow">
         <span class="eyebrow__line"></span>
-        <span class="eyebrow__label">Advocate &amp; Legal Counsel, Bhopal</span>
+        <span class="eyebrow__label">Independent Legal Practice · Bhopal</span>
       </div>
-      <h1 ref="headline" class="hero__title">Considered counsel for matters that matter.</h1>
+      <h1 ref="headline" class="hero__title">Clear counsel. Resolute representation.</h1>
       <p class="hero__lede">
-        Bhramlex is the practice of <strong>Abhishek Tiwari</strong>, an advocate in Bhopal
-        advising individuals and businesses across litigation, corporate, and dispute resolution
-        with clarity, discretion, and rigour.
+        Brahmlex is the independent practice of <strong>Advocate Abhishek Tiwari</strong>, advising
+        individuals, families, and businesses across disputes, transactions, court and tribunal
+        proceedings, and arbitration. The firm serves clients in Bhopal, Jabalpur, Raisen,
+        Berasia, and Sehore with careful preparation, practical judgment, and direct communication.
       </p>
       <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary">Request a consultation</a>
-        <a href="#practice" class="btn btn--text">View practice areas</a>
+        <a href="#contact" class="btn btn--primary">Discuss your matter</a>
+        <a href="#practice" class="btn btn--text">Explore our expertise</a>
       </div>
       <div class="hero__stats">
         <div class="stat">
           <div ref="stat1" class="stat__num">0+</div>
-          <div class="stat__label">Years of practice</div>
+          <div class="stat__label">Years of legal experience</div>
         </div>
         <div class="stat">
           <div ref="stat2" class="stat__num">0+</div>
-          <div class="stat__label">Matters handled</div>
+          <div class="stat__label">Matters advised on</div>
         </div>
         <div class="stat">
           <div ref="stat3" class="stat__num">0</div>
-          <div class="stat__label">Areas of practice</div>
+          <div class="stat__label">Core practice areas</div>
         </div>
       </div>
     </div>
 
     <div class="hero__visual">
       <div ref="portrait" class="portrait">
-        <img src="/1764166015896.jpg" alt="Abhishek Tiwari, Founder & Principal Advocate" class="portrait__img" />
+        <img
+          src="/brahmlex-supreme-court.jpg"
+          alt="Advocate Abhishek Tiwari at the Supreme Court of India"
+          class="portrait__img"
+        />
       </div>
       <div ref="card" class="portrait__card">
         <div class="portrait__name">Abhishek Tiwari</div>
@@ -93,7 +98,7 @@ onMounted(() => {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 96px 32px 84px;
+  padding: 112px 32px 104px;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
@@ -103,9 +108,9 @@ onMounted(() => {
 .hero__title {
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 66px;
-  line-height: 1.02;
-  letter-spacing: -0.5px;
+  font-size: clamp(56px, 5.1vw, 74px);
+  line-height: 0.98;
+  letter-spacing: -1.6px;
   color: var(--ink);
   margin-bottom: 26px;
   text-wrap: balance;
@@ -142,12 +147,16 @@ onMounted(() => {
   background: var(--ink);
   color: var(--cream);
   padding: 15px 30px;
-  border-radius: 2px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(8, 47, 115, 0.12);
 }
 
 .btn--primary:hover {
   background: var(--hover-ink);
   color: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(8, 47, 115, 0.18);
 }
 
 .btn--text {
@@ -191,17 +200,27 @@ onMounted(() => {
 
 .portrait {
   aspect-ratio: 4 / 5;
-  background: #e7e1d3;
+  background: var(--border-strong);
   border: 1px solid var(--border-strong);
-  border-radius: 3px;
+  border-radius: 180px 180px 12px 12px;
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  pointer-events: none;
 }
 
 .portrait__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 52%;
   display: block;
 }
 
@@ -212,7 +231,9 @@ onMounted(() => {
   background: var(--ink);
   color: var(--cream);
   padding: 18px 22px;
-  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  box-shadow: 0 18px 38px rgba(6, 29, 67, 0.22);
   max-width: 210px;
 }
 

@@ -23,6 +23,7 @@ const errors = reactive({
 
 const submitted = ref(false)
 const submitting = ref(false)
+const submitError = ref('')
 const panel = ref(null)
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -39,14 +40,25 @@ function validate() {
   return !errors.name && !errors.email && !errors.matter && !errors.message
 }
 
-function submit() {
+async function submit() {
   if (!validate()) return
 
   submitting.value = true
-  window.setTimeout(() => {
-    submitting.value = false
+  submitError.value = ''
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    })
+    const result = await response.json().catch(() => ({}))
+    if (!response.ok) throw new Error(result.error || 'Unable to send your enquiry right now.')
     submitted.value = true
-  }, 600)
+  } catch (error) {
+    submitError.value = error.message
+  } finally {
+    submitting.value = false
+  }
 }
 
 function resetForm() {
@@ -55,6 +67,7 @@ function resetForm() {
   form.matter = ''
   form.message = ''
   errors.name = errors.email = errors.matter = errors.message = ''
+  submitError.value = ''
   submitted.value = false
   gsap.from(panel.value, { opacity: 0, y: 12, duration: 0.5, ease: 'power2.out' })
 }
@@ -67,16 +80,18 @@ function resetForm() {
         <span class="eyebrow__line"></span>
         <span class="eyebrow__label">Contact</span>
       </div>
-      <h2 ref="heading" class="contact__heading">Request a consultation.</h2>
+      <h2 ref="heading" class="contact__heading">Begin with a confidential conversation.</h2>
       <p class="contact__lede">
-        Share a few details about your matter and Abhishek will respond personally, usually within
-        one business day. All enquiries are treated in strict confidence.
+        Briefly outline your matter and Advocate Abhishek Tiwari will review your enquiry
+        personally. Information submitted here is treated with discretion and used only to assess
+        whether the firm can assist. Brahmlex serves clients across Bhopal, Jabalpur, Raisen,
+        Berasia, and Sehore.
       </p>
       <div class="contact__details">
         <div class="detail">
           <span class="detail__label">Email</span>
-          <a href="mailto:contact@bhramlex.in" class="detail__value detail__value--link"
-            >contact@bhramlex.in</a
+          <a href="mailto:contact@Brahmlex.in" class="detail__value detail__value--link"
+            >contact@Brahmlex.in</a
           >
         </div>
         <div class="detail">
@@ -87,6 +102,9 @@ function resetForm() {
           <span class="detail__label">Chambers</span>
           <span class="detail__value"
             >B-14, Kasturba Nagar, Near Chetak Bridge,<br />Bhopal — 462023</span
+          >
+          <span class="detail__value"
+            >357-358 <br />Bhopal — 462023</span
           >
         </div>
         <div class="detail">
@@ -161,7 +179,11 @@ function resetForm() {
         <button type="submit" class="submit" :disabled="submitting">
           {{ submitting ? 'Sending…' : 'Send enquiry' }}
         </button>
-        <p class="disclaimer">Submitting this form does not create a lawyer–client relationship.</p>
+        <p v-if="submitError" class="form-error" role="alert">{{ submitError }}</p>
+        <p class="disclaimer">
+          Please avoid sharing highly sensitive documents at this stage. Submitting an enquiry does
+          not create a lawyer–client relationship.
+        </p>
       </form>
     </div>
   </section>
@@ -171,7 +193,7 @@ function resetForm() {
 .contact {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 120px 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
@@ -233,8 +255,10 @@ function resetForm() {
 .form-panel {
   background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 40px;
+  border-color: rgba(212, 201, 186, 0.8);
+  border-radius: 14px;
+  padding: 44px;
+  box-shadow: var(--shadow-lg);
 }
 
 .form {
@@ -257,17 +281,18 @@ function resetForm() {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid var(--border-strong);
-  border-radius: 3px;
+  border-radius: 7px;
   font-family: var(--font-sans);
   font-size: 15px;
   color: var(--ink-soft);
   background: var(--cream-input);
-  transition: border-color 0.15s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .field__input:focus {
   border-color: var(--ink);
   outline: none;
+  box-shadow: 0 0 0 3px rgba(8, 47, 115, 0.09);
 }
 
 .field__input--area {
@@ -289,16 +314,18 @@ function resetForm() {
   color: var(--cream);
   padding: 15px;
   border: none;
-  border-radius: 3px;
+  border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
   margin-top: 4px;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .submit:hover:not(:disabled) {
   background: var(--hover-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(8, 47, 115, 0.2);
 }
 
 .submit:disabled {
@@ -311,6 +338,13 @@ function resetForm() {
   color: #9a9182;
   text-align: center;
   line-height: 1.5;
+}
+
+.form-error {
+  color: #a1443c;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .success {

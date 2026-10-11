@@ -7,6 +7,7 @@ import PracticeAreas from './components/PracticeAreas.vue'
 import Approach from './components/Approach.vue'
 import Testimonials from './components/Testimonials.vue'
 import FAQ from './components/FAQ.vue'
+import ConsultationBooking from './components/ConsultationBooking.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 </script>
@@ -21,6 +22,7 @@ import Footer from './components/Footer.vue'
     <Approach />
     <Testimonials />
     <FAQ />
+    <ConsultationBooking />
     <Contact />
     <Footer />
   </div>

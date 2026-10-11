@@ -19,7 +19,7 @@ useScrollReveal(list, '.faq-item')
         <span class="eyebrow__label">Frequently Asked</span>
         <span class="eyebrow__line"></span>
       </div>
-      <h2 ref="heading" class="faq__heading">Advocate in Bhopal — common questions.</h2>
+      <h2 ref="heading" class="faq__heading">Practical answers before you take the next step.</h2>
     </div>
 
     <div ref="list" class="faq__list">
@@ -35,7 +35,7 @@ useScrollReveal(list, '.faq-item')
 .faq {
   max-width: 880px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 120px 32px;
 }
 
 .faq__head {
@@ -58,14 +58,22 @@ useScrollReveal(list, '.faq-item')
 .faq__list {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  gap: 10px;
+  background: transparent;
+  border: 0;
 }
 
 .faq-item {
-  background: var(--cream);
-  padding: 22px 26px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 28px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.faq-item[open] {
+  border-color: var(--gold-soft);
+  box-shadow: var(--shadow-sm);
 }
 
 .faq-item__q {

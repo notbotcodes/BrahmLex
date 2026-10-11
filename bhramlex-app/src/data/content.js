@@ -10,55 +10,55 @@ export const practiceAreas = [
   {
     num: '01',
     title: 'Corporate & Commercial',
-    desc: 'Company formation, contracts, compliance, and advisory for founders and established businesses alike.',
+    desc: 'Practical advice on business structures, commercial agreements, governance, compliance, and day-to-day legal risk.',
   },
   {
     num: '02',
     title: 'Civil Litigation',
-    desc: 'Representation in property, recovery, and contractual disputes before trial and appellate courts.',
+    desc: 'Strategic representation in contractual, property, recovery, and other civil disputes before trial and appellate courts.',
   },
   {
     num: '03',
     title: 'Criminal Defence',
-    desc: 'Bail, trial defence, and quashing petitions — measured advocacy at every stage of proceedings.',
+    desc: 'Careful representation in bail, trial, quashing, and related proceedings, with close attention to procedure and evidence.',
   },
   {
     num: '04',
     title: 'Family & Matrimonial',
-    desc: 'Divorce, maintenance, custody, and settlements handled with sensitivity and discretion.',
+    desc: 'Discreet advice and representation in divorce, maintenance, custody, domestic disputes, and negotiated settlements.',
   },
   {
     num: '05',
     title: 'Property & Real Estate',
-    desc: 'Title due diligence, documentation, and resolution of ownership and tenancy disputes.',
+    desc: 'Title review, transaction documentation, due diligence, and representation in ownership, possession, and tenancy disputes.',
   },
   {
     num: '06',
     title: 'Arbitration & Mediation',
-    desc: 'Efficient, confidential resolution of commercial disputes outside the courtroom.',
+    desc: 'Structured, confidential approaches to resolving commercial disputes through arbitration, mediation, and negotiation.',
   },
 ]
 
 export const approachSteps = [
   {
     num: 'STEP 01',
-    title: 'Consultation',
-    desc: 'We begin with a confidential discussion to understand your matter and objectives.',
+    title: 'Initial Consultation',
+    desc: 'A focused discussion to understand the facts, immediate concerns, and the outcome you are seeking.',
   },
   {
     num: 'STEP 02',
-    title: 'Assessment',
-    desc: 'A clear, honest view of your position, the options open to you, and likely outcomes.',
+    title: 'Legal Assessment',
+    desc: 'A candid evaluation of your legal position, available remedies, material risks, and practical options.',
   },
   {
     num: 'STEP 03',
-    title: 'Strategy',
-    desc: 'An agreed plan of action with transparent timelines and fee expectations.',
+    title: 'Agreed Strategy',
+    desc: 'A proportionate course of action, with responsibilities, likely stages, timelines, and fees explained clearly.',
   },
   {
     num: 'STEP 04',
-    title: 'Resolution',
-    desc: 'Diligent representation through to the conclusion of your matter.',
+    title: 'Focused Execution',
+    desc: 'Prepared and responsive representation through negotiation, proceedings, and the conclusion of the engagement.',
   },
 ]
 
@@ -82,24 +82,24 @@ export const testimonials = [
 
 export const faqs = [
   {
-    q: 'Who is the best advocate in Bhopal for corporate and litigation matters?',
-    a: 'Abhishek Tiwari of Bhramlex Advocates is a Bhopal-based advocate enrolled with the Bar Council of India, with over 12 years handling corporate, civil litigation, criminal defence, family, property, and arbitration matters before the Madhya Pradesh High Court and Bhopal District Courts.',
+    q: 'What legal matters does Brahmlex advise on?',
+    a: 'Brahmlex advises individuals, families, and businesses on corporate and commercial matters, civil litigation, criminal defence, family disputes, property matters, and arbitration and mediation.',
   },
   {
-    q: 'Which courts does Bhramlex Advocates practice in?',
-    a: 'We appear before the Madhya Pradesh High Court and the District Courts in Bhopal, representing clients across corporate, civil, criminal, family, and property matters.',
+    q: 'Which courts and forums does Brahmlex practice before?',
+    a: 'Brahmlex represents clients before courts, tribunals, and arbitral forums in matters spanning corporate, civil, criminal, family, property, consumer, and commercial law.',
   },
   {
-    q: 'How do I book a consultation with an advocate in Bhopal?',
-    a: 'You can request a consultation using the contact form on this site, call +91 95841 67347, or email contact@bhramlex.in. Abhishek typically responds personally within one business day.',
+    q: 'How do I request an initial consultation?',
+    a: 'Use the contact form, call +91 95841 67347, or email contact@Brahmlex.in with a brief outline of your matter. Please avoid sending highly sensitive documents until the practice confirms how they should be shared.',
   },
   {
-    q: 'What areas of law does Bhramlex Advocates handle in Bhopal?',
+    q: 'What areas of law does Brahmlex Advocates handle in Bhopal?',
     a: 'Our practice covers corporate & commercial law, civil litigation, criminal defence, family & matrimonial matters, property & real estate, and arbitration & mediation.',
   },
   {
-    q: 'Where is Bhramlex Advocates located in Bhopal?',
-    a: 'Our chambers are at B-14, Kasturba Nagar, Near Chetak Bridge, Bhopal — 462023, Madhya Pradesh.',
+    q: 'Which locations does Brahmlex serve?',
+    a: 'The firm is based in Bhopal and serves clients across Bhopal, Jabalpur, Raisen, Berasia, and Sehore in Madhya Pradesh. Chambers are at B-14, Kasturba Nagar, Near Chetak Bridge, Bhopal — 462023.',
   },
   {
     q: 'Does submitting an enquiry create a lawyer-client relationship?',

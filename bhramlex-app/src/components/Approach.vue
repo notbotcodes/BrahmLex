@@ -19,7 +19,7 @@ useScrollReveal(grid, '.step')
         <span class="eyebrow__label">How We Work</span>
         <span class="eyebrow__line"></span>
       </div>
-      <h2 ref="heading" class="approach__heading">A straightforward path, start to finish.</h2>
+      <h2 ref="heading" class="approach__heading">A disciplined approach to every engagement.</h2>
     </div>
     <div ref="grid" class="approach__grid">
       <div v-for="step in approachSteps" :key="step.num" class="step">
@@ -36,7 +36,7 @@ useScrollReveal(grid, '.step')
 .approach {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 32px;
+  padding: 120px 32px;
 }
 
 .approach__head {
@@ -72,8 +72,8 @@ useScrollReveal(grid, '.step')
 }
 
 .step__rule {
-  height: 1px;
-  background: var(--border);
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--border) 34%, var(--border));
   margin-bottom: 20px;
 }
 

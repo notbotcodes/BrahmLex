@@ -5,29 +5,33 @@
 }
 
 :root {
-  --ink: #17241f;
-  --ink-soft: #23302a;
-  --body-text: #3a463f;
-  --body-text-soft: #4a554e;
-  --muted: #566159;
-  --faint: #7a827a;
-  --cream: #f6f4ee;
-  --cream-input: #faf9f4;
-  --panel: #eeeadf;
-  --border: #e2ddd0;
-  --border-strong: #d8d1c0;
-  --grid-line: #ddd6c6;
-  --gold: #b0894f;
-  --gold-hover: #8f6d38;
-  --hover-ink: #223a30;
-  --footer-bg: #101a15;
-  --footer-border: #223a30;
-  --footer-text: #8fa093;
-  --footer-text-soft: #a6b4a8;
-  --footer-text-faint: #7d8f81;
-  --footer-copy: #66766a;
+  --ink: #082f73;
+  --ink-soft: #173b70;
+  --body-text: #334966;
+  --body-text-soft: #4b5f78;
+  --muted: #607188;
+  --faint: #78869a;
+  --cream: #fbfaf7;
+  --cream-input: #ffffff;
+  --panel: #f3eee7;
+  --border: #e4ded4;
+  --border-strong: #d4c9ba;
+  --grid-line: #ddd4c7;
+  --gold: #bd7228;
+  --gold-hover: #96551b;
+  --hover-ink: #0c438f;
+  --footer-bg: #061d43;
+  --footer-border: #173b70;
+  --footer-text: #b8c5d6;
+  --footer-text-soft: #d3dbe6;
+  --footer-text-faint: #aab9cc;
+  --footer-copy: #8fa1b9;
+  --surface: #ffffff;
+  --gold-soft: #ead6bf;
+  --shadow-sm: 0 12px 34px rgba(8, 47, 115, 0.08);
+  --shadow-lg: 0 28px 70px rgba(6, 29, 67, 0.16);
 
-  --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
 }
 
@@ -40,6 +44,12 @@ body {
   font-family: var(--font-sans);
   color: var(--ink-soft);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at 8% 2%, rgba(189, 114, 40, 0.07), transparent 28rem),
+    radial-gradient(circle at 96% 28%, rgba(8, 47, 115, 0.055), transparent 32rem);
+  background-attachment: fixed;
 }
 
 a {
@@ -59,6 +69,11 @@ a:hover {
 button {
   font-family: inherit;
   cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 input,
@@ -92,6 +107,20 @@ select {
   max-width: 1200px;
   margin: 0 auto;
   padding: 100px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 860px) {

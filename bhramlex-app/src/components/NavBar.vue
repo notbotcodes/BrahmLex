@@ -11,7 +11,7 @@ function closeMenu() {
 
 let observer
 onMounted(() => {
-  const sections = ['about', 'practice', 'approach', 'testimonials', 'faq', 'contact']
+  const sections = ['about', 'practice', 'approach', 'testimonials', 'faq', 'consultation', 'contact']
     .map((id) => document.getElementById(id))
     .filter(Boolean)
 
@@ -33,8 +33,9 @@ onUnmounted(() => observer && observer.disconnect())
   <header class="nav">
     <nav class="nav__inner">
       <a href="#top" class="nav__brand" @click="closeMenu">
-        <span class="nav__brand-name">Bhramlex</span>
-        <span class="nav__brand-tag">Advocates</span>
+        <span class="nav__logo-crop">
+          <img src="/brahmlex-logo.png" alt="BrahmLex" class="nav__logo" />
+        </span>
       </a>
 
       <div class="nav__links" :class="{ 'nav__links--open': menuOpen }">
@@ -48,7 +49,7 @@ onUnmounted(() => observer && observer.disconnect())
         >
           {{ link.label }}
         </a>
-        <a href="#contact" class="nav__cta" @click="closeMenu">Book Consultation</a>
+        <a href="#consultation" class="nav__cta" @click="closeMenu">Book Consultation</a>
       </div>
 
       <button
@@ -69,40 +70,40 @@ onUnmounted(() => observer && observer.disconnect())
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 244, 238, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(251, 250, 247, 0.94);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 1px 0 rgba(8, 47, 115, 0.03);
   border-bottom: 1px solid var(--border);
 }
 
 .nav__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 8px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav__brand {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  color: var(--ink);
+  display: block;
+  flex-shrink: 0;
 }
 
-.nav__brand-name {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 26px;
-  letter-spacing: 0.5px;
+.nav__logo-crop {
+  position: relative;
+  display: block;
+  width: 180px;
+  height: 74px;
+  overflow: hidden;
 }
 
-.nav__brand-tag {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
+.nav__logo {
+  position: absolute;
+  width: 262px;
+  max-width: none;
+  left: -42px;
+  top: -55px;
 }
 
 .nav__links {
@@ -112,10 +113,24 @@ onUnmounted(() => observer && observer.disconnect())
 }
 
 .nav__link {
+  position: relative;
   color: var(--body-text);
   font-size: 14px;
   font-weight: 500;
   transition: color 0.2s;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
 }
 
 .nav__link:hover,
@@ -123,20 +138,28 @@ onUnmounted(() => observer && observer.disconnect())
   color: var(--gold);
 }
 
+.nav__link:hover::after,
+.nav__link--active::after {
+  transform: scaleX(1);
+}
+
 .nav__cta {
   background: var(--ink);
   color: var(--cream);
   padding: 11px 22px;
-  border-radius: 2px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  transition: background 0.2s;
+  transition: background 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
 .nav__cta:hover {
   background: var(--hover-ink);
   color: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(8, 47, 115, 0.18);
 }
 
 .nav__toggle {
@@ -185,13 +208,28 @@ onUnmounted(() => observer && observer.disconnect())
 }
 
 @media (max-width: 860px) {
+  .nav__inner {
+    padding: 8px 24px;
+  }
+
+  .nav__logo-crop {
+    width: 146px;
+    height: 60px;
+  }
+
+  .nav__logo {
+    width: 213px;
+    left: -34px;
+    top: -45px;
+  }
+
   .nav__toggle {
     display: block;
   }
 
   .nav__links {
     position: fixed;
-    top: 61px;
+    top: 76px;
     left: 0;
     right: 0;
     background: var(--cream);
